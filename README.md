@@ -1,4 +1,4 @@
-# Template for creating SmallProject Games Easy
+# Template for creating Small Games Easy
 
 - Download Package
 Get latest release here: https://github.com/Eugen24/smallproject-unity-template/releases
