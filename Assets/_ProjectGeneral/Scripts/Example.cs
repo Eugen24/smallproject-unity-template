@@ -1,48 +1,18 @@
-﻿using Template.Scripts.DI;
-using Template.Scripts.UI.StartMenu;
-using Template.Scripts.UI.WinLose;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace _Project.Scripts
+public class Example : MonoBehaviour
 {
-    public class Example : InjectedMono
+    // Start is called before the first frame update
+    void Start()
     {
-        [SerializeField] private Text _text;
+        
+    }
 
-        public override void OnSyncStart()
-        {
-            _signalBus.Sub<StartMenu.OnStartLevel>(OnStartLevel);
-            _signalBus.Sub<FinishLevelHandler.FinishSignal>(OnFinishLevel);
-        }
-
-        private void OnFinishLevel(FinishLevelHandler.FinishSignal obj)
-        {
-            if (obj.IsWin)
-            {
-                _text.text = "Win";
-            }
-            else
-            {
-                _text.text = "Lose";
-            }
-        }
-
-        private void OnStartLevel(StartMenu.OnStartLevel obj)
-        {
-            _text.text = "Game Loop";
-        }
-
-        public void OnFail()
-        {
-            _signalBus.Fire(new FinishLevelHandler.FinishSignal
-                { AmountOfPoints = 20, IsWin = false});
-        }
-
-        public void OnWin()
-        {
-            _signalBus.Fire(new FinishLevelHandler.FinishSignal
-                { AmountOfPoints = 20, IsWin = true, ShowPoints = true});
-        }
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }
